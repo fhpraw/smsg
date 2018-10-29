@@ -1,0 +1,3 @@
+[gammu]
+device=com4
+connection=at115200
