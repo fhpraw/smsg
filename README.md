@@ -7,7 +7,8 @@ This is a simple program for sending mass SMS.
 2. Install [Gammu](https://dl.cihar.com/gammu/releases/windows/Gammu-1.39.0-Windows-64bit.exe) binaries 64 bit
 3. Install [python-gammu](https://dl.cihar.com/python-gammu/win32/python-gammu-2.11.win-amd64-py3.6.exe) binaries version with python 3.6 support
 4. Install [driver](http://www.totalcardiagnostics.com/support/Knowledgebase/Article/View/92/20/prolific-usb-to-serial-fix-official-solution-to-code-10-error)
-5. Plug modem (wavecom facetrack)
+5. Plug the modem (I use Wavecom Fastrack M1306B)
+6. Create file named gammurc on current directory
 
 ## How to use
 Massive SMS
