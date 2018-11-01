@@ -3,6 +3,8 @@ import sys
 import re
 import openpyxl
 
+DEFAULT_SHEETNAME = 'Sheet1'
+
 def clean_all_whitespace(string):
     """Clean all white space
 
@@ -18,8 +20,7 @@ def clean_all_whitespace(string):
 
 def get_column_values(file_path,
                       sheet_name,
-                      column_location,
-                      use_header=True):
+                      column_location):
     """Get all cell values from define column
 
     Args:
@@ -32,7 +33,7 @@ def get_column_values(file_path,
     """
 
     # create empty list for storing cell value
-    list_value = []
+    list_col_value = []
 
     try:
         # load excel file
@@ -46,15 +47,28 @@ def get_column_values(file_path,
 
     # get cell value from defined column location
     for cell in sheet[column_location]:
-        list_value.append(cell.value)
+        list_col_value.append(cell.value)
 
-    # using header or not
-    if use_header :
-        list_value.pop(0)
-        return list_value
-    else:
-        return list_value
+    # return
+    return list_col_value
 
+def get_all_values(filename, sheetname):
+    """ get all values from excel file
+
+    Args:
+        filename: excel file
+        sheetname: sheet name
+    Returns:
+        list of values
+    """
+    list_all_value = []
+    wb = openpyxl.load_workbook(filename, read_only=True)
+    ws = wb[sheetname]
+
+    for row in ws.rows:
+        list_all_value.append([x.value for x in row])
+
+    return list_all_value
 
 def define_message(text, cellnumber):
     """Create SMS message format in gammu
@@ -108,3 +122,5 @@ def send_bulk_message(text, list_of_cellnumber):
             continue
         print(f'The message has been succesfully sent to {cellnumber}')
         total_cellnumber -= 1
+
+print(get_all_values('sample.xlsx', DEFAULT_SHEETNAME))
