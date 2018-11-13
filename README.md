@@ -14,8 +14,7 @@ This is a simple program for sending mass SMS.
 Massive SMS
 
 ```sh
-usage: smsbanyak.py [-h] [--noheader]
-                    TEXT_CONTENT XLSX_PATH SHEET_NAME COLUMN_LOCATION
+usage: smsbulk.py [-h] TEXT_CONTENT XLSX_PATH SHEET_NAME COLUMN_LOCATION
 
 positional arguments:
   TEXT_CONTENT     text content
@@ -25,5 +24,4 @@ positional arguments:
 
 optional arguments:
   -h, --help       show this help message and exit
-  --noheader       with no header on column
 ```
