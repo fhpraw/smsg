@@ -1,3 +1,8 @@
+"""SMS Bulk
+
+This program will help you to send mass SMS to a bunch of cell number store in XLSX file
+"""
+
 import re
 import sys
 import argparse
@@ -5,7 +10,16 @@ import gammu
 import openpyxl
 
 def get_column_values(file, sheet, column):
-    """Get all cell values from define column"""
+    """Get all cell values from define column
+
+    Parameters:
+        file (str): The file location of the spreadsheet XLSX
+        sheet (str): Active sheet name
+        column (str): Column address
+    
+    Returns:
+        list: a list of cell value based on defined column address
+    """
     list = []
     try:
         # load excel file
@@ -24,7 +38,16 @@ def get_column_values(file, sheet, column):
     return list
 
 def define_message(text, cellnum):
-    """Create SMS message format in gammu"""
+    """Create SMS message format in gammu
+
+    Parameters:
+        text (str): text message
+        cellnum (str): cell number
+    
+    Returns:
+        message: SMS message format based on gammu
+    
+    """
     if len(text) >= 160 :
         return sys.exit('text is more than 160 characters')
     else:
@@ -36,7 +59,15 @@ def define_message(text, cellnum):
         return message
 
 def send_bulk_message(text, list_of_cellnum):
-    """Send mass SMS to multiple cell number"""
+    """Send mass SMS to multiple cell number
+
+    Parameters:
+        text (str): text message
+        list_of_cellnum: list of cell number
+    
+    Returns:
+        none
+    """
 
     # create object for talking with phone
     sm = gammu.StateMachine()
