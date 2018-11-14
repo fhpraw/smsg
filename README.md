@@ -21,7 +21,7 @@ connection=at115200
 ## How to use
 Massive SMS
 
-```sh
+```text
 usage: smsbulk.py [-h] TEXT_CONTENT CSV_PATH
 
 Send SMS to bulk cell number using list of cell numbers store in CSV file
@@ -35,6 +35,19 @@ optional arguments:
   -h, --help    show this help message and exit
 ```
 
+Single SMS
+```text
+usage: smsone.py [-h] TEXT_CONTENT CELL_NUMBER
+
+Send single SMS
+
+positional arguments:
+  TEXT_CONTENT  text content
+  CELL_NUMBER   cell number
+
+optional arguments:
+  -h, --help    show this help message and exit
+```
+
 ## TODO
-- single SMS support
 - set gammurc file
