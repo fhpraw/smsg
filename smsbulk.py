@@ -93,7 +93,7 @@ def send_bulk_message(text, list_of_cellnum):
         print(f'The message has been succesfully sent to {cellnumber}')
         total_cellnumber -= 1
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description='Send SMS to bulk cell number')
 parser.add_argument("TEXT_CONTENT", help="text content")
 parser.add_argument("XLSX_PATH", help="xlsx file which contain list of cellnumber")
 parser.add_argument("SHEET_NAME", help="active sheet name in xlsx file")
