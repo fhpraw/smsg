@@ -97,7 +97,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("TEXT_CONTENT", help="text content")
 parser.add_argument("XLSX_PATH", help="xlsx file which contain list of cellnumber")
 parser.add_argument("SHEET_NAME", help="active sheet name in xlsx file")
-parser.add_argument("COLUMN_LOCATION", help="column location in active sheet")
+parser.add_argument("COLUMN_LOCATION", help="column location in active sheet WARNING !!! WITHOUT HEADER")
 args = parser.parse_args()
 
 list_cellnum = get_column_values(args.XLSX_PATH, args.SHEET_NAME, args.COLUMN_LOCATION)
