@@ -3,7 +3,6 @@
 This program will help you to send mass SMS to a bunch of cell number store in XLSX file
 """
 
-import re
 import sys
 import argparse
 import gammu
