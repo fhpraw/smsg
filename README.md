@@ -25,3 +25,8 @@ positional arguments:
 optional arguments:
   -h, --help       show this help message and exit
 ```
+
+## TODO
+- add CSV support
+- single SMS support
+- set gammurc file
