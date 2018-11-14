@@ -1,6 +1,7 @@
 __pycache__
 .vscode
-*.xlsx
 build
 dist
 *.spec
+*.xlsx
+*.csv
