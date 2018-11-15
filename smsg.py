@@ -57,11 +57,14 @@ def send_one(text, cellnumber):
 
     # connect to the phone
     sm.Init()
-
+    
+    print(f'Sending SMS to {cellnumber}...') 
     try:
         sm.SendSMS(define_message(text, cellnumber))
     except gammu.GSMError:
-        print(f'SMS for {cellnumber} failed')
+        sys.exit(f'SMS for {cellnumber} failed')
+    
+    print(f'The message has been succesfully sent to {cellnumber}')
 
 def send_bulk(text, list_of_cellnum):
     """Send mass SMS to multiple cell number
