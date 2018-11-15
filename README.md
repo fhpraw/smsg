@@ -50,4 +50,4 @@ optional arguments:
 ```
 
 ## TODO
-- set gammurc file
+- inbox
